@@ -1,0 +1,22 @@
+// Last updated: 9/7/2026, 11:08:57 PM
+class Solution {
+public:
+    int smallestIndex(vector<int>& nums) {
+        int n = nums.size();
+
+        for(int i=0;i<n;i++){
+            int num = nums[i];
+            int digitSum = 0;
+            while(num>0){
+                digitSum += num % 10;
+                num/=10;
+            }
+
+            if(digitSum == i){
+                return i;
+            }
+        }
+
+        return -1;
+    }
+};
